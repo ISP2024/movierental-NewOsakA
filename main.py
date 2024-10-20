@@ -4,15 +4,17 @@
 from movie import Movie
 from rental import Rental
 from customer import Customer
+from movie_catalog import MovieCatalog
+
 
 def make_movies():
     """Some sample movies."""
     movies = [
-        Movie("Air", Movie.NEW_RELEASE),
-        Movie("Oppenheimer", Movie.REGULAR),
-        Movie("Frozen", Movie.CHILDRENS),
-        Movie("Bitconned", Movie.NEW_RELEASE),
-        Movie("Particle Fever", Movie.REGULAR)
+        MovieCatalog().get_movie("Fair Play"),
+        MovieCatalog().get_movie("Oppenheimer"),
+        MovieCatalog().get_movie("Deadpool"),
+        MovieCatalog().get_movie("Bitconned"),
+        MovieCatalog().get_movie("Particle Fever")
     ]
     return movies
 
