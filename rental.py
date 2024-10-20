@@ -1,4 +1,5 @@
 from pricing import NEW_RELEASE, REGULAR, CHILDREN
+from datetime import datetime
 
 
 class Rental:
@@ -41,3 +42,11 @@ class Rental:
     def rental_points(self):
         """Calculate frequent renter points using pricing."""
         return self.price_code.get_rental_points(self.days_rented)
+
+    @classmethod
+    def price_code_for_movie(cls, movie):
+        if movie.year == datetime.now().year:
+            return cls.NEW_RELEASE
+        if any(genre.lower() in ["children", "childrens"] for genre in movie.genre):
+            return cls.CHILDRENS
+        return cls.REGULAR

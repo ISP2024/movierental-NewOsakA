@@ -31,3 +31,11 @@ and keeping it in Movie creates unnecessary dependencies.
 SRP states that a class should have only one reason to change. 
 The Movie class should focus solely on the details and behavior of a movie, 
 while rental-specific logic, like price_code, belongs in the Rental class.
+
+**5.2 Describe where you implement this method and the reasons for your choice.**
+* **High Cohesion**
+* **Information Expert**
+
+The Rental class is responsible for managing movie rentals and contains information about 
+the movie's release year, genre, and the number of days rented. This data can be used to calculate 
+the rental price, determine rental points, and retrieve the price code for each movie.
