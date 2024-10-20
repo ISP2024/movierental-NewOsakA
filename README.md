@@ -18,3 +18,16 @@ Before and after each refactoring you should **run the unit tests**.
 
 See [Resources](https://cpske.github.io/ISP/assignment/movierental/movierental-part1#resources) in the assignment description.
 
+
+## Rationale
+**2.1 what refactoring signs (code smells) suggest this refactoring?**
+* **Feature Envy:**
+The price_code was being accessed and utilized primarily by the Rental class, 
+not the Movie class. This suggests that the attribute is more relevant to Rental, 
+and keeping it in Movie creates unnecessary dependencies.
+
+**2.2 what design principle suggests this refactoring? Why?**
+* **Single Responsibility Principle (SRP):**
+SRP states that a class should have only one reason to change. 
+The Movie class should focus solely on the details and behavior of a movie, 
+while rental-specific logic, like price_code, belongs in the Rental class.
